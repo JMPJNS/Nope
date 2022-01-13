@@ -5,7 +5,7 @@ class RowService {
     rowDb: Row[] = [
         {
             id: uuidv4(),
-            created: new Date(),
+            created: new Date().toISOString(),
             colls: [
                 new Column(ColumnType.Number, 2),
                 new Column(ColumnType.String, "Hello"),

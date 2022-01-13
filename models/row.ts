@@ -3,12 +3,12 @@ import { v4 as uuidv4 } from 'uuid'
 export class Row {
     id: string
     colls: Column<ColumnType>[]
-    created: Date
+    created: string
 
     constructor() {
         this.id = uuidv4()
         this.colls = []
-        this.created = new Date()
+        this.created = new Date().toISOString()
     }
 }
 
@@ -16,12 +16,12 @@ export class Column<T extends ColumnType> {
     id: string
     type: T
     data?: ColumnDataType<T>
-    created: Date
+    created: string
 
     constructor(type: T, data?: ColumnDataType<T>) {
         this.id = uuidv4()
         this.type = type
-        this.created = new Date()
+        this.created = new Date().toISOString()
         this.data = data
     }
 }
